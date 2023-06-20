@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.sketch-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sketchpad{
+    width: 576px;
+    height: 576px;
+    border: 2px solid black;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+}
+
+.grid{
+    border: 1px solid black;
+}
