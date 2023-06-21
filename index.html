@@ -16,14 +16,22 @@
     </div>
     <div class="sketch-section">
         <div class="button-section">
-
+            <button class="color-mode" id="colorMode">Color Mode</button>
+            <button class="random-mode" id="randomMode">Random Mode</button>
+            <button class="eraser" id="eraser">Eraser</button>
+            <button class="clear" id="clear">Clear</button>
         </div>
         <div class="sketchpad-section">
             <div class="sketchpad" id="sketchPad">
             </div>
         </div>
         <div class="options-section">
-             
+            <input type="color" class="color-picker" id="colorPicker" /> 
+            <div class="slider-ui">
+                <input type="range" min="1" max="100" value="16" class="slider" id="slider">
+                <p class="slider-value" id="sliderValue"></p>  
+            </div>
+            <button class="grid-toggle" id="gridToggle">Grid</button>
         </div>
     </div>
 </body>

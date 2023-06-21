@@ -2,7 +2,6 @@ let userInput = prompt("Enter the grid size");
 
 const sketchPad = document.getElementById('sketchPad');
 
-
 /*function setupGrid() {
   
   for (let i = 0; i < 256; i++) {
@@ -32,5 +31,3 @@ function updateGrid(userInput) {
 }
 
 updateGrid(userInput);
-
-
