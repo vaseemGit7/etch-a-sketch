@@ -16,18 +16,41 @@ const sliderValue = document.getElementById('sliderValue');
 const gridToggle = document.getElementById('gridToggle');
 const sketchPad = document.getElementById('sketchPad');
 
+slider.onmousemove =(e) =>updateSizeValue(e.target.value);
+slider.onchange = (e)=> updateSize(e.target.value)
 
-function updateGrid(userInput) {
-  for(let i =0;i<userInput * userInput;i++){
+function setCurrentSize(newSize){
+  currentSize = newSize;
+}
+
+function updateSize(value){
+  setCurrentSize(value);
+  reload();
+}
+
+function updateSizeValue(value){
+  sliderValue.innerHTML = `${value}`;
+}
+
+function reload(){
+  sketchPad.innerHTML='';
+  setupGrid(currentSize);
+}
+
+
+function setupGrid(size) {
+  sketchPad.style.gridTemplateColumns = `repeat(${size},1fr)`;
+  sketchPad.style.gridTemplateRows = `repeat(${size},1fr)`; 
+  for(let i =0;i<size*size;i++){
     const div = document.createElement('div');
     div.classList.add('grid');
     div.addEventListener('mouseover', function(event){
-        event.target.style.backgroundColor = 'black';
+        event.target.style.backgroundColor = "black";
     })
     sketchPad.appendChild(div);
-    sketchPad.style.gridTemplateColumns = `repeat(${userInput}, 2fr)`;
-    sketchPad.style.gridTemplateRows = `repeat(${userInput}, 2fr)`; 
   }
 }
 
-updateGrid(userInput);
+window.onload=()=>{
+  setupGrid(DEFAULT_SIZE);
+}
