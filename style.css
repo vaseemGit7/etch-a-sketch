@@ -4,6 +4,8 @@ body{
     margin: 0;
     padding: 0;
     background-color: #e3e3e3;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }
 
 .header-section{
@@ -28,7 +30,7 @@ body{
 .button-section{
     display: flex;
     flex-direction: column;
-    margin: 0 160px;
+    margin: 0 120px;
     padding: 40px;
 }
 
@@ -55,6 +57,31 @@ body{
     background-color: white;
     box-shadow: 10px 10px 10px gray;
 }
+
+.options-section{
+    margin: 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.color-picker{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 80px;
+    width: 80px;
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+    margin: 0 30px;
+}
+
+.color-section{
+    padding-bottom:40px;
+}
+
 
 .grid-border{
     border: 1px solid #E3E3E3;
