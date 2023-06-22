@@ -55,7 +55,13 @@ function changeColor(e){
   if(currentMode ==='color'){
     e.target.style.backgroundColor = currentColor;
   }
-  
+  else if(currentMode === 'random'){
+    const randomRed = Math.floor(Math.random()*256);
+    const randomGreen = Math.floor(Math.random()*256);
+    const randomBlue = Math.floor(Math.random()*256);
+    
+    e.target.style.backgroundColor = `rgb(${randomRed},${randomGreen},${randomBlue})`;
+  }
 }
 
 function setupGrid(size) {
