@@ -1,11 +1,25 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #e3e3e3;
+}
+
+.header-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.nav{
+    padding: 20px 0;
 }
 
 .sketch-section{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -16,6 +30,7 @@ body{
     display: inline-grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+    background-color: white;
 }
 
 .grid-border{
