@@ -51,8 +51,11 @@ function reload(){
   setupGrid(currentSize);
 }
 
-function changeColor(){
-
+function changeColor(e){
+  if(currentMode ==='color'){
+    e.target.style.backgroundColor = currentColor;
+  }
+  
 }
 
 function setupGrid(size) {
@@ -63,9 +66,7 @@ function setupGrid(size) {
     gridToggle.addEventListener('click',function(){
       div.classList.toggle('grid-border');
     })
-    div.addEventListener('mouseover', function(event){
-        event.target.style.backgroundColor = currentColor;
-    })
+    div.addEventListener('mouseover', changeColor);
     sketchPad.appendChild(div);
   }
 }
