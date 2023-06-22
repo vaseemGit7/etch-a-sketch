@@ -9,7 +9,7 @@ let currentColor = DEFAULT_COLOR;
 const colorModeBtn = document.getElementById('colorMode');
 const randomModeBtn = document.getElementById('randomMode');
 const eraserBtn = document.getElementById('eraser');
-const clear = document.getElementById('clear');
+const clearBtn = document.getElementById('clear');
 const colorPicker = document.getElementById('colorPicker');
 const slider = document.getElementById('slider');
 const sliderValue = document.getElementById('sliderValue');
@@ -19,6 +19,7 @@ const sketchPad = document.getElementById('sketchPad');
 colorModeBtn.onclick = ()=> setCurrentMode('color');
 randomModeBtn.onclick = () => setCurrentMode('random');
 eraserBtn.onclick = () => setCurrentMode('eraser'); 
+clearBtn.onclick = () => reload();
 colorPicker.oninput =(e)=>setCurrentColor(e.target.value);
 slider.onmousemove =(e) =>updateSizeValue(e.target.value);
 slider.onchange = (e)=> updateSize(e.target.value);
@@ -72,6 +73,7 @@ function setupGrid(size) {
   sketchPad.style.gridTemplateRows = `repeat(${size},1fr)`; 
   for(let i =0;i<size*size;i++){
     const div = document.createElement('div');
+    div.classList.add('grid-border');
     gridToggle.addEventListener('click',function(){
       div.classList.toggle('grid-border');
     })
@@ -82,4 +84,5 @@ function setupGrid(size) {
 
 window.onload=()=>{
   setupGrid(DEFAULT_SIZE);
+  
 }
