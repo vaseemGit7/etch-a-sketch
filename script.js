@@ -62,6 +62,9 @@ function changeColor(e){
     
     e.target.style.backgroundColor = `rgb(${randomRed},${randomGreen},${randomBlue})`;
   }
+  else if(currentMode === 'eraser'){
+    e.target.style.backgroundColor = 'white';
+  }
 }
 
 function setupGrid(size) {
