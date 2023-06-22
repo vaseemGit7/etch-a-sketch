@@ -6,9 +6,9 @@ let currentSize = DEFAULT_SIZE;
 let currentMode = DEFAULT_MODE;
 let currentColor = DEFAULT_COLOR;
 
-const colorMode = document.getElementById('colorMode');
-const randomMode = document.getElementById('randomMode');
-const eraser = document.getElementById('eraser');
+const colorModeBtn = document.getElementById('colorMode');
+const randomModeBtn = document.getElementById('randomMode');
+const eraserBtn = document.getElementById('eraser');
 const clear = document.getElementById('clear');
 const colorPicker = document.getElementById('colorPicker');
 const slider = document.getElementById('slider');
@@ -16,6 +16,9 @@ const sliderValue = document.getElementById('sliderValue');
 const gridToggle = document.getElementById('gridToggle');
 const sketchPad = document.getElementById('sketchPad');
 
+colorModeBtn.onclick = ()=> setCurrentMode('color');
+randomModeBtn.onclick = () => setCurrentMode('random');
+eraserBtn.onclick = () => setCurrentMode('eraser'); 
 colorPicker.oninput =(e)=>setCurrentColor(e.target.value);
 slider.onmousemove =(e) =>updateSizeValue(e.target.value);
 slider.onchange = (e)=> updateSize(e.target.value);
@@ -26,6 +29,11 @@ function setCurrentColor(newColor){
 
 function setCurrentSize(newSize){
   currentSize = newSize;
+}
+
+function setCurrentMode(mode){
+  currentMode = mode ;
+  console.log(currentMode);
 }
 
 function updateSize(value){
@@ -43,6 +51,9 @@ function reload(){
   setupGrid(currentSize);
 }
 
+function changeColor(){
+
+}
 
 function setupGrid(size) {
   sketchPad.style.gridTemplateColumns = `repeat(${size},1fr)`;
