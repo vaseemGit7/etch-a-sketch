@@ -49,7 +49,9 @@ function setupGrid(size) {
   sketchPad.style.gridTemplateRows = `repeat(${size},1fr)`; 
   for(let i =0;i<size*size;i++){
     const div = document.createElement('div');
-    div.classList.add('grid');
+    gridToggle.addEventListener('click',function(){
+      div.classList.toggle('grid-border');
+    })
     div.addEventListener('mouseover', function(event){
         event.target.style.backgroundColor = currentColor;
     })
