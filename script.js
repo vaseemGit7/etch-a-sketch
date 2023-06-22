@@ -1,4 +1,4 @@
-let DEFAULT_COLOR = '#00000';
+let DEFAULT_COLOR = '#000000';
 let DEFAULT_SIZE = 16;
 let DEFAULT_MODE = 'color';
 
@@ -16,8 +16,13 @@ const sliderValue = document.getElementById('sliderValue');
 const gridToggle = document.getElementById('gridToggle');
 const sketchPad = document.getElementById('sketchPad');
 
+colorPicker.oninput =(e)=>setCurrentColor(e.target.value);
 slider.onmousemove =(e) =>updateSizeValue(e.target.value);
-slider.onchange = (e)=> updateSize(e.target.value)
+slider.onchange = (e)=> updateSize(e.target.value);
+
+function setCurrentColor(newColor){
+  currentColor = newColor;
+}
 
 function setCurrentSize(newSize){
   currentSize = newSize;
@@ -25,6 +30,7 @@ function setCurrentSize(newSize){
 
 function updateSize(value){
   setCurrentSize(value);
+  updateSizeValue(value)
   reload();
 }
 
@@ -45,7 +51,7 @@ function setupGrid(size) {
     const div = document.createElement('div');
     div.classList.add('grid');
     div.addEventListener('mouseover', function(event){
-        event.target.style.backgroundColor = "black";
+        event.target.style.backgroundColor = currentColor;
     })
     sketchPad.appendChild(div);
   }
