@@ -24,6 +24,10 @@ colorPicker.oninput =(e)=>setCurrentColor(e.target.value);
 slider.onmousemove =(e) =>updateSizeValue(e.target.value);
 slider.onchange = (e)=> updateSize(e.target.value);
 
+gridToggle.addEventListener('click',function(){
+  gridToggle.classList.toggle('toggled'); 
+})
+
 function setCurrentColor(newColor){
   currentColor = newColor;
 }
@@ -48,8 +52,12 @@ function updateSizeValue(value){
 }
 
 function reload(){
-  sketchPad.innerHTML='';
+  clear();
   setupGrid(currentSize);
+}
+
+function clear(){
+  sketchPad.innerHTML='';
 }
 
 function changeColor(e){

@@ -59,12 +59,11 @@ body{
 }
 
 .options-section{
-    margin: 0 200px;
+    margin: 0 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
 }
 
 .color-picker{
@@ -82,10 +81,35 @@ body{
     padding-bottom:40px;
 }
 
+.slider-ui{
+    display:flex;
+}
+
+.slider{
+   
+}
+
+.grid-toggle{
+    margin: 30px;
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;  
+    background-color: black;
+    color: white;
+}
+
+.toggled{
+    background-color: white;
+    color: black;
+}
+
 
 .grid-border{
     border: 1px solid #E3E3E3;
 }
+
 
 .button-section > button:hover{
     box-shadow: 7px 7px 0px black;
