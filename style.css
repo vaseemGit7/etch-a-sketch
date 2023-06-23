@@ -25,7 +25,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
+    margin: 100px 0;
 }
 .button-section{
     display: flex;
@@ -43,6 +43,11 @@ body{
     font-size: 10px;
 }
 
+.active{
+    background-color: black;
+    color: white;
+}
+
 .sketchpad-section{
     margin: 0 20px;
 }
@@ -52,8 +57,6 @@ body{
     height: 576px;
     border: 2px solid black;
     display: inline-grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     background-color: white;
     box-shadow: 10px 10px 10px gray;
 }
@@ -83,10 +86,6 @@ body{
 
 .slider-ui{
     display:flex;
-}
-
-.slider{
-   
 }
 
 .grid-toggle{

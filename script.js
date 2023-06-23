@@ -6,6 +6,20 @@ let currentSize = DEFAULT_SIZE;
 let currentMode = DEFAULT_MODE;
 let currentColor = DEFAULT_COLOR;
 
+
+function setCurrentColor(newColor){
+  currentColor = newColor;
+}
+
+function setCurrentSize(newSize){
+  currentSize = newSize;
+}
+
+function setCurrentMode(newMode){
+  activateButton(newMode);
+  currentMode = newMode ;
+}
+
 const colorModeBtn = document.getElementById('colorMode');
 const randomModeBtn = document.getElementById('randomMode');
 const eraserBtn = document.getElementById('eraser');
@@ -28,27 +42,15 @@ gridToggle.addEventListener('click',function(){
   gridToggle.classList.toggle('toggled'); 
 })
 
-function setCurrentColor(newColor){
-  currentColor = newColor;
-}
 
-function setCurrentSize(newSize){
-  currentSize = newSize;
-}
-
-function setCurrentMode(mode){
-  currentMode = mode ;
-  console.log(currentMode);
+function updateSizeValue(value){
+  sliderValue.innerHTML = `${value}`;
 }
 
 function updateSize(value){
   setCurrentSize(value);
   updateSizeValue(value)
   reload();
-}
-
-function updateSizeValue(value){
-  sliderValue.innerHTML = `${value}`;
 }
 
 function reload(){
@@ -58,6 +60,21 @@ function reload(){
 
 function clear(){
   sketchPad.innerHTML='';
+}
+
+function setupGrid(size) {
+  sketchPad.style.gridTemplateColumns = `repeat(${size},1fr)`;
+  sketchPad.style.gridTemplateRows = `repeat(${size},1fr)`; 
+
+  for(let i =0;i<size*size;i++){
+    const div = document.createElement('div');
+    div.classList.add('grid-border');
+    div.addEventListener('mouseover', changeColor);
+    sketchPad.appendChild(div);
+    gridToggle.addEventListener('click',function(){
+      div.classList.toggle('grid-border');
+    })
+  }
 }
 
 function changeColor(e){
@@ -76,21 +93,26 @@ function changeColor(e){
   }
 }
 
-function setupGrid(size) {
-  sketchPad.style.gridTemplateColumns = `repeat(${size},1fr)`;
-  sketchPad.style.gridTemplateRows = `repeat(${size},1fr)`; 
-  for(let i =0;i<size*size;i++){
-    const div = document.createElement('div');
-    div.classList.add('grid-border');
-    gridToggle.addEventListener('click',function(){
-      div.classList.toggle('grid-border');
-    })
-    div.addEventListener('mouseover', changeColor);
-    sketchPad.appendChild(div);
+function activateButton(newMode){
+  if(currentMode==='random'){
+    randomModeBtn.classList.remove('active');
+  }else if(currentMode==='color'){
+    colorModeBtn.classList.remove('active');
+  }else if(currentMode==='eraser'){
+    eraserBtn.classList.remove('active');
+  }
+
+  if(newMode === 'random'){
+    randomModeBtn.classList.add('active');
+  }else if(newMode === 'color'){
+    colorModeBtn.classList.add('active');
+  }else if(newMode === 'eraser'){
+    eraserBtn.classList.add('active');
   }
 }
 
+
 window.onload=()=>{
   setupGrid(DEFAULT_SIZE);
-  
+  activateButton(DEFAULT_MODE);
 }
