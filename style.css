@@ -3,7 +3,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #e3e3e3;
+    background-color: #F2D0A7;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
 }
@@ -13,8 +13,10 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'VT323', monospace;
-    font-size: 60px;
+    font-size: 75px;
     font-weight: 600;
+    color: #171559;
+    text-shadow: 7px 7px 0px #F26363;
 }
 
 .nav{
@@ -27,6 +29,7 @@ body{
     align-items: center;
     margin: 100px 0;
 }
+
 .button-section{
     display: flex;
     flex-direction: column;
@@ -38,31 +41,28 @@ body{
     margin: 30px;
     padding: 10px 20px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #F26363;
     font-family: 'Poppins', sans-serif;
     font-size: 10px;
 }
 
 .active{
-    background-color: black;
-    color: white;
+    background-color: #F26363;
+    color:white;
 }
 
 .sketchpad-section{
-    margin: 0 20px;
-}
-
-.sketchpad{
-    width: 576px;
-    height: 576px;
+    width: 529px;
+    height: 529px;
     border: 2px solid black;
     display: inline-grid;
     background-color: white;
-    box-shadow: 10px 10px 10px gray;
+    box-shadow: 10px 10px 10px #6d5da693;
 }
 
 .options-section{
-    margin: 0 160px;
+    margin: 0 140px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,18 +84,28 @@ body{
     padding-bottom:40px;
 }
 
+.color-section > p {
+    color: #171559;
+}
+
 .slider-ui{
     display:flex;
+    padding: 0 10px ;
+}
+
+.slider-value{
+    width:30px;
+    color:#171559 ;
 }
 
 .grid-toggle{
     margin: 30px;
     padding: 10px 60px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #F26363;
     font-family: 'Poppins', sans-serif;
     font-size: 10px;  
-    background-color: black;
+    background-color: #F26363;
     color: white;
 }
 
@@ -106,12 +116,17 @@ body{
 
 
 .grid-border{
-    border: 1px solid #E3E3E3;
+    border: 1px solid #E3E3E3; 
 }
 
 
 .button-section > button:hover{
-    box-shadow: 7px 7px 0px black;
+    box-shadow: 7px 7px 0px #171559;
     top: -5px;
     left: -5px;
+}
+
+.clear:active{
+    background-color: #F26363;
+    color: white;
 }

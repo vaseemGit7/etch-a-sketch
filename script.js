@@ -38,10 +38,6 @@ colorPicker.oninput =(e)=>setCurrentColor(e.target.value);
 slider.onmousemove =(e) =>updateSizeValue(e.target.value);
 slider.onchange = (e)=> updateSize(e.target.value);
 
-gridToggle.addEventListener('click',function(){
-  gridToggle.classList.toggle('toggled'); 
-})
-
 
 function updateSizeValue(value){
   sliderValue.innerHTML = `${value}`;
@@ -55,7 +51,7 @@ function updateSize(value){
 
 function reload(){
   clear();
-  setupGrid(currentSize);
+  setupGrid(currentSize,toggle());
 }
 
 function clear(){
@@ -71,9 +67,6 @@ function setupGrid(size) {
     div.classList.add('grid-border');
     div.addEventListener('mouseover', changeColor);
     sketchPad.appendChild(div);
-    gridToggle.addEventListener('click',function(){
-      div.classList.toggle('grid-border');
-    })
   }
 }
 
