@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'VT323', monospace;
-    font-size: 75px;
+    font-size: 4rem;
     font-weight: 600;
     color: #171559;
     text-shadow: 7px 7px 0px #F26363;
@@ -27,23 +27,23 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px 0;
+    margin: 1% 0;
 }
 
 .button-section{
     display: flex;
     flex-direction: column;
     margin: 0 120px;
-    padding: 40px;
+    padding: 40px ;
 }
 
 .button-section > button{
-    margin: 30px;
+    margin: 20px;
     padding: 10px 20px;
     border-radius: 10px;
     border: 2px solid #F26363;
     font-family: 'Poppins', sans-serif;
-    font-size: 10px;
+    font-size: 0.75rem;
 }
 
 .active{
@@ -52,8 +52,8 @@ body{
 }
 
 .sketchpad-section{
-    width: 529px;
-    height: 529px;
+    width: 500px;
+    height: 500px;
     border: 2px solid black;
     display: inline-grid;
     background-color: white;
