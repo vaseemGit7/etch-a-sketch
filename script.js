@@ -69,6 +69,7 @@ function setupGrid(size) {
   for(let i =0;i<size*size;i++){
     const div = document.createElement('div');
     div.classList.add('grid-border');
+    div.addEventListener('mousedown',changeColor);
     div.addEventListener('mouseover', changeColor);
     sketchPad.appendChild(div);
   }
