@@ -51,12 +51,16 @@ function updateSize(value){
 
 function reload(){
   clear();
-  setupGrid(currentSize,toggle());
+  setupGrid(currentSize);
 }
 
 function clear(){
   sketchPad.innerHTML='';
 }
+
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown=false);
 
 function setupGrid(size) {
   sketchPad.style.gridTemplateColumns = `repeat(${size},1fr)`;
@@ -71,6 +75,7 @@ function setupGrid(size) {
 }
 
 function changeColor(e){
+  if(e.type ==='mouseover' & !mouseDown) return;
   if(currentMode ==='color'){
     e.target.style.backgroundColor = currentColor;
   }
